@@ -1,3 +1,6 @@
+const myLibrary = []
+
+
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author 
@@ -6,7 +9,10 @@ function Book(title, author, pages, read) {
     this.id = crypto.randomUUID()
 }
 
-let HarryPooper = new Book("HarryPooper", "J.K.Rawling", 456, "no")
-console.log(HarryPooper)
-let Martin = new Book("HarryPooper", "J.K.Rawling", 456, "no")
-console.log(Martin)
+function addBookToLibrary(Book) {
+    myLibrary.push(Book)
+}
+let HarryPooper = new Book("herypoter", "jk rwling", 234, "no")
+addBookToLibrary(HarryPooper)
+
+console.log(myLibrary)
