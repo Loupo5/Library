@@ -1,6 +1,10 @@
 const myLibrary = []
 const table = document.querySelector("table")
 const tbody = document.querySelector("tbody")
+const add_book_btn = document.getElementById("addBook")
+let HarryPooper = new Book("herypoter", "jk rwling", 234, "no")
+
+add_book_btn.addEventListener("click", () => addBookToLibrary(HarryPooper))
 
 
 
@@ -25,7 +29,7 @@ function addBookToLibrary(book) {
             tableRow.appendChild(tableData)
         }
         for (let key in book) {
-            if (key === "id") continue
+            if (book[key] === book.id) continue /*Skips showing the id key*/
             const tableData = document.createElement("td")
             tableData.textContent = book[key]
             tableRow.appendChild(tableData)
@@ -34,7 +38,4 @@ function addBookToLibrary(book) {
     }
     
 }
-let HarryPooper = new Book("herypoter", "jk rwling", 234, "no")
-addBookToLibrary(HarryPooper)
 
-console.log(myLibrary)
