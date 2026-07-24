@@ -19,3 +19,15 @@ body {
 .container-left {
     border-right: 5px solid white;
 }
+
+.container-right {
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    border: 5px solid black;
+}
