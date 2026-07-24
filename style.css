@@ -21,6 +21,15 @@ body {
 .container-left {
     border-right: 5px solid white;
 }
+dialog {
+    position: fixed;
+    top: 18%;
+    left: 21%;
+    margin: 0;
+    border: 1px solid transparent;
+    background: rgba(255,255, 255, 0.3);
+    border-radius: 20px;
+}
 .input-box {
     margin: 1em 3em;
     display: flex;

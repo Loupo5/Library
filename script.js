@@ -1,12 +1,18 @@
 const myLibrary = []
 const table = document.querySelector("table")
 const tbody = document.querySelector("tbody")
-const add_book_btn = document.querySelector("button")
+const new_book_btn = document.querySelector(".new-book-btn")
+const dialog = document.querySelector("dialog")
+const add_book_btn = document.querySelector(".add-book-btn")
 const book_title = document.querySelector("#title")
 const book_author = document.querySelector("#author")
 const book_pages = document.querySelector("#pages")
 const book_read = document.querySelector("#read")
-let HarryPooper = new Book("herypoter", "jk rwling", 234, "no")
+
+new_book_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    dialog.showModal()
+})
 
 add_book_btn.addEventListener("click", (e) => {
     e.preventDefault()
