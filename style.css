@@ -10,8 +10,9 @@ body {
 }
 .container {
     margin: 2em auto;
-    height: 100vh;
+    height: 90vh;
     width: 60vw;
+    border-radius: 20px;
     border: 1px solid transparent;
     background-color: rgba(255, 255, 255, 0.2);
     display: grid;
@@ -43,14 +44,13 @@ input {
    margin-top: 1.5em;
 }
 
-
-
 .container-right {
     color: white;
 }
 
 table {
-    width: 100%;
+    width: 95%;
+    margin: 5px 10px;
 }
 
 tr {
@@ -58,12 +58,20 @@ tr {
 }
 td:first-child,
 th:first-child {
-    width: 10%
+    width: 1em
+}
+th:last-child,
+td:last-child {
+    width: 2em;
+}
+td:nth-last-child(2),
+th:nth-last-child(2) {
+    width: 2em;
 }
 
 td,
 th {
-    width: 22.5%;
+    width: 6em;
     border: 1px solid white;
     text-align: center;
 }
