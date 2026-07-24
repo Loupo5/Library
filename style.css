@@ -42,6 +42,14 @@ input {
 }
 .add-book-btn {
    margin-top: 1.5em;
+   padding: 1em;
+   border-radius: 20px;
+   color: white;
+   background: linear-gradient(45deg, purple, darkgreen);
+   border: 1px solid transparent;
+}
+.add-book-btn:hover {
+    opacity: 0.9;
 }
 
 .container-right {

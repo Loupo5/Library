@@ -1,11 +1,22 @@
 const myLibrary = []
 const table = document.querySelector("table")
 const tbody = document.querySelector("tbody")
-const add_book_btn = document.getElementById("addBook")
+const add_book_btn = document.querySelector("button")
+const book_title = document.querySelector("#title")
+const book_author = document.querySelector("#author")
+const book_pages = document.querySelector("#pages")
+const book_read = document.querySelector("#read")
 let HarryPooper = new Book("herypoter", "jk rwling", 234, "no")
 
-add_book_btn.addEventListener("click", () => addBookToLibrary(HarryPooper))
-
+add_book_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    let newBook = new Book(book_title.value, book_author.value, book_pages.value, book_read.value)
+    addBookToLibrary(newBook)
+    book_title.value = ""
+    book_author.value = ""
+    book_pages.value= ""
+    book_read.value= ""
+})
 
 
 function Book(title, author, pages, read) {
