@@ -5,13 +5,14 @@
 }
 body {
     height: 100vh;
+    color: white;
     background: linear-gradient(135deg, purple, darkgreen)
 }
 .container {
     margin: 2em auto;
     height: 100vh;
     width: 60vw;
-    border: 1pxsolid transparent;
+    border: 1px solid transparent;
     background-color: rgba(255, 255, 255, 0.2);
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -19,6 +20,30 @@ body {
 .container-left {
     border-right: 5px solid white;
 }
+.input-box {
+    margin: 1em 3em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.input-box:first-child {
+    margin-top: 4em;
+}
+
+.border {
+    border: 1px solid white;
+}
+label {
+    font-size: 1.5em;
+}
+input {
+    border-radius: 10px;
+}
+.add-book-btn {
+   margin-top: 1.5em;
+}
+
+
 
 .container-right {
     color: white;
