@@ -20,9 +20,9 @@ add_book_btn.addEventListener("click", (e) => {
     const newBook = new Book(book_title.value, book_author.value, book_pages.value, book_read.checked)
     /*if (newBook.title == "") newBook.title = "'blank'"
     if (newBook.author == "") newBook.author = "'blank'"
-    if (newBook.pages == "") newBook.pages = "'unknown'"
+    if (newBook.pages == "") newBook.pages = "'unknown'"*/
     if (newBook.read == true) newBook.read = "yes"
-    if (newBook.read == false) newBook.read = "no"*/
+    if (newBook.read == false) newBook.read = "no"
     if (validateValues(newBook) == true) {
         return
     }
@@ -67,6 +67,13 @@ function addBookToLibrary(book) {
     const tableData = document.createElement("td")
     tableData.textContent = `Book ${myLibrary.length}`
     tableRow.appendChild(tableData)
+    const deleteBtn = document.createElement("button")
+    deleteBtn.textContent = "Remove"
+    deleteBtn.addEventListener("click", () => {
+        console.log("Clicked")
+    })
+    deleteBtn.classList.add("deleteBtn")
+    tableData.appendChild(deleteBtn)
     for (let key in book) {
         if (book[key] === book.id) continue /*Skips showing the id key*/
         const tableData = document.createElement("td")
