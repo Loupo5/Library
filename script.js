@@ -67,26 +67,50 @@ function addBookToLibrary(book) {
     const deleteCell = document.createElement("td")
     const deleteBtn = document.createElement("button")
     deleteBtn.textContent = "X"
+    
+    deleteBtn.classList.add("deleteBtn")
+    deleteCell.appendChild(deleteBtn)
+    tableRow.appendChild(deleteCell)
     deleteBtn.addEventListener("click", () => {
         tableRow.remove()
         const deleteBook = myLibrary.findIndex((current) => current.id === book.id)
+        
         if (deleteBook != false) {
             myLibrary.splice(deleteBook, 1)
         }
     })
-    deleteBtn.classList.add("deleteBtn")
-    deleteCell.appendChild(deleteBtn)
-    tableRow.appendChild(deleteCell)
     const tableData = document.createElement("td")
     tableData.textContent = `Book ${myLibrary.length}`
     tableRow.appendChild(tableData)
 
     for (let key in book) {
         if (book[key] === book.id) continue /*Skips showing the id key*/
-        const tableData = document.createElement("td")
+        if (book[key] === book.read) {
+            const readData = document.createElement("td")
+            readData.textContent = book[key]
+            tableRow.appendChild(readData)
+            const toggleBtn = document.createElement("button")
+            const toggleData = document.createElement("td")
+            toggleBtn.textContent = "Toggle"
+            toggleBtn.addEventListener("click", (e) => {
+                e.preventDefault()
+                if (readData.textContent == "yes") {
+                    readData.textContent = "no"
+                }
+                else readData.textContent = "yes"
+            })
+            toggleData.appendChild(toggleBtn)
+            tableRow.append(toggleData)
+        }
+        else {const tableData = document.createElement("td")
         tableData.textContent = book[key]
         tableRow.appendChild(tableData)
+        }
     }
+    
+
     tbody.appendChild(tableRow) 
+
+    
 }
 
