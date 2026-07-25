@@ -17,16 +17,17 @@ new_book_btn.addEventListener("click", (e) => {
 add_book_btn.addEventListener("click", (e) => {
     e.preventDefault()
     const newBook = new Book(book_title.value, book_author.value, book_pages.value, book_read.checked)
-    if (newBook.title == "") newBook.title = "'blank'"
+    /*if (newBook.title == "") newBook.title = "'blank'"
     if (newBook.author == "") newBook.author = "'blank'"
     if (newBook.pages == "") newBook.pages = "'unknown'"
     if (newBook.read == true) newBook.read = "yes"
-    if (newBook.read == false) newBook.read = "no"
+    if (newBook.read == false) newBook.read = "no"*/
+    if (validateValues(newBook) == true) {
+        return
+    }
     addBookToLibrary(newBook)
-    book_title.value = ""
-    book_author.value = ""
-    book_pages.value= ""
-    book_read.value= ""
+
+    dialog.close()
 })
 
 
@@ -39,6 +40,21 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.read = read
     this.id = crypto.randomUUID()
+}
+function validateValues(book) {
+    if (book.title == "") {
+        alert("Invalid book title") 
+        return true
+    }
+    else if (book.author =="") {
+        alert("invalid book author")
+        return  true
+    }
+    else if (book.pages == "" || isNaN(parseInt(book.pages))) {
+        alert("Use number for pages")
+        return  true
+    }
+    else return false
 }
 
 function addBookToLibrary(book) {
