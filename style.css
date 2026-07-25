@@ -6,7 +6,7 @@
 body {
     height: 100vh;
     color: white;
-    background: linear-gradient(135deg, purple, darkgreen)
+    background: linear-gradient(135deg, darkgreen, black)
 }
 .container {
     margin: 2em auto;
@@ -77,7 +77,7 @@ table {
 }
 
 tr {
-    border: 5px solid black;
+    border-bottom: 1px solid white
 }
 td:first-child,
 th:first-child {
@@ -90,15 +90,21 @@ th:nth-last-child(2),
 td:nth-child(2),
 th:nth-child(2) {
     width: 2em;
+    color: white;
+    font-weight: 500;
 }
 td:nth-last-child(2),
 th:nth-last-child(2) {
     width: 2em;
+    color: white;
 }
 
-
+table {
+    border-collapse: collapse;
+}
 td,
 th {
+    font-weight: bold;
     height: 2em;
     border: 1px solid white;
     width: 6em;
