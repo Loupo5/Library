@@ -68,7 +68,11 @@ function addBookToLibrary(book) {
     const deleteBtn = document.createElement("button")
     deleteBtn.textContent = "X"
     deleteBtn.addEventListener("click", () => {
-        console.log("Clicked")
+        tableRow.remove()
+        const deleteBook = myLibrary.findIndex((current) => current.id === book.id)
+        if (deleteBook != false) {
+            myLibrary.splice(deleteBook, 1)
+        }
     })
     deleteBtn.classList.add("deleteBtn")
     deleteCell.appendChild(deleteBtn)
