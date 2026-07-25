@@ -81,7 +81,7 @@ tr {
 }
 td:first-child,
 th:first-child {
-    width: 1em
+    width: 3em
 }
 th:last-child,
 td:last-child,
@@ -96,15 +96,23 @@ th:nth-last-child(2) {
     width: 2em;
 }
 
+
 td,
 th {
-    width: 6em;
+    height: 2em;
     border: 1px solid white;
+    width: 6em;
+    border: 1px ;
     text-align: center;
 }
 .deleteBtn {
-    background: red;
+    background: white;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    margin-left: -1em;
 }
 .deleteBtn:hover {
-    background: blue;
+    background: color-mix(in srgb, white 50%, red)
 }

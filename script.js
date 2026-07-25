@@ -66,7 +66,7 @@ function addBookToLibrary(book) {
     const tableRow = document.createElement("tr")
     const deleteCell = document.createElement("td")
     const deleteBtn = document.createElement("button")
-    deleteBtn.textContent = "Remove"
+    deleteBtn.textContent = "X"
     deleteBtn.addEventListener("click", () => {
         console.log("Clicked")
     })
