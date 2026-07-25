@@ -12,7 +12,7 @@ const book_read = document.querySelector("#read")
 
 new_book_btn.addEventListener("click", (e) => {
     e.preventDefault()
-    dialog.showModal()
+    dialog.show()
 })
 
 add_book_btn.addEventListener("click", (e) => {
@@ -64,16 +64,19 @@ function validateValues(book) {
 function addBookToLibrary(book) {
     myLibrary.push(book)
     const tableRow = document.createElement("tr")
-    const tableData = document.createElement("td")
-    tableData.textContent = `Book ${myLibrary.length}`
-    tableRow.appendChild(tableData)
+    const deleteCell = document.createElement("td")
     const deleteBtn = document.createElement("button")
     deleteBtn.textContent = "Remove"
     deleteBtn.addEventListener("click", () => {
         console.log("Clicked")
     })
     deleteBtn.classList.add("deleteBtn")
-    tableData.appendChild(deleteBtn)
+    deleteCell.appendChild(deleteBtn)
+    tableRow.appendChild(deleteCell)
+    const tableData = document.createElement("td")
+    tableData.textContent = `Book ${myLibrary.length}`
+    tableRow.appendChild(tableData)
+
     for (let key in book) {
         if (book[key] === book.id) continue /*Skips showing the id key*/
         const tableData = document.createElement("td")
