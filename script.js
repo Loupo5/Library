@@ -4,6 +4,7 @@ const tbody = document.querySelector("tbody")
 const new_book_btn = document.querySelector(".new-book-btn")
 const dialog = document.querySelector("dialog")
 const add_book_btn = document.querySelector(".add-book-btn")
+const close_book_btn = document.querySelector(".close-book-btn")
 const book_title = document.querySelector("#title")
 const book_author = document.querySelector("#author")
 const book_pages = document.querySelector("#pages")
@@ -27,6 +28,9 @@ add_book_btn.addEventListener("click", (e) => {
     }
     addBookToLibrary(newBook)
 
+})
+close_book_btn.addEventListener("click", (e) => {
+    e.preventDefault()
     dialog.close()
 })
 
