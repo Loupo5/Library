@@ -18,9 +18,7 @@ new_book_btn.addEventListener("click", (e) => {
 add_book_btn.addEventListener("click", (e) => {
     e.preventDefault()
     const newBook = new Book(book_title.value, book_author.value, book_pages.value, book_read.checked)
-    /*if (newBook.title == "") newBook.title = "'blank'"
-    if (newBook.author == "") newBook.author = "'blank'"
-    if (newBook.pages == "") newBook.pages = "'unknown'"*/
+    
     if (newBook.read == true) newBook.read = "yes"
     if (newBook.read == false) newBook.read = "no"
     if (validateValues(newBook) == true) {
