@@ -34,8 +34,17 @@ close_book_btn.addEventListener("click", (e) => {
     dialog.close()
 })
 
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+        this.id = crypto.randomUUID
+    }
+}
 
-function Book(title, author, pages, read) {
+/*function Book(title, author, pages, read) {
     if (!new.target)  {
         throw Error("Use the 'new' operator")
     }
@@ -44,7 +53,7 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.read = read
     this.id = crypto.randomUUID()
-}
+}*/
 function validateValues(book) {
     if (book.title == "") {
         alert("Invalid book title") 
