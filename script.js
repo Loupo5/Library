@@ -58,9 +58,6 @@ form.addEventListener("submit", (e) => {
     if (newBook.read == true) newBook.read = "yes"
     if (newBook.read == false) newBook.read = "no"
 
-    /*if (validateValues(newBook) == true) {
-        return
-    }*/
     addBookToLibrary(newBook)
 
 })
@@ -79,31 +76,6 @@ class Book {
     }
 }
 
-/*function Book(title, author, pages, read) {
-    if (!new.target)  {
-        throw Error("Use the 'new' operator")
-    }
-    this.title = title
-    this.author = author 
-    this.pages = pages
-    this.read = read
-    this.id = crypto.randomUUID()
-}*/
-/*function validateValues(book) {
-    if (book.title == "") {
-        alert("Invalid book title") 
-        return true
-    }
-    else if (book.author =="") {
-        alert("invalid book author")
-        return  true
-    }
-    else if (book.pages == "" || isNaN(parseInt(book.pages))) {
-        alert("Use number for pages")
-        return  true
-    }
-    else return false
-}*/
 
 function addBookToLibrary(book) {
     myLibrary.push(book)
@@ -151,7 +123,6 @@ function addBookToLibrary(book) {
         tableRow.appendChild(tableData)
         }
     }
-    
 
     tbody.appendChild(tableRow) 
 }
