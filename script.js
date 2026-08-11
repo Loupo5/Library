@@ -9,21 +9,31 @@ const book_title = document.querySelector("#title")
 const book_author = document.querySelector("#author")
 const book_pages = document.querySelector("#pages")
 const book_read = document.querySelector("#read")
+const form = document.querySelector("form")
 
 new_book_btn.addEventListener("click", (e) => {
     e.preventDefault()
     dialog.show()
 })
+book_title.addEventListener("input", () => {
+    if (book_title.value.length < 4) {
+        book_title.setCustomValidity("At least 4 characters long")
+        book_title.className = "error"
+        return
+    } else book_title.setCustomValidity("")
+})
 
-add_book_btn.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
     e.preventDefault()
+
     const newBook = new Book(book_title.value, book_author.value, book_pages.value, book_read.checked)
     
     if (newBook.read == true) newBook.read = "yes"
     if (newBook.read == false) newBook.read = "no"
-    if (validateValues(newBook) == true) {
+
+    /*if (validateValues(newBook) == true) {
         return
-    }
+    }*/
     addBookToLibrary(newBook)
 
 })
@@ -38,7 +48,7 @@ class Book {
         this.author = author
         this.pages = pages
         this.read = read
-        this.id = crypto.randomUUID
+        this.id = crypto.randomUUID()
     }
 }
 
@@ -52,7 +62,7 @@ class Book {
     this.read = read
     this.id = crypto.randomUUID()
 }*/
-function validateValues(book) {
+/*function validateValues(book) {
     if (book.title == "") {
         alert("Invalid book title") 
         return true
@@ -66,7 +76,7 @@ function validateValues(book) {
         return  true
     }
     else return false
-}
+}*/
 
 function addBookToLibrary(book) {
     myLibrary.push(book)
@@ -117,7 +127,7 @@ function addBookToLibrary(book) {
     
 
     tbody.appendChild(tableRow) 
-
-    
 }
+
+
 
