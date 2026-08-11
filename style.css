@@ -78,8 +78,9 @@ table {
 input {
     outline: none;
 }
-.error {
+input.error {
     border: 2px dotted red;
+    color: red;
 }
 
 tr {

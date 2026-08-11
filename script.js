@@ -18,9 +18,36 @@ new_book_btn.addEventListener("click", (e) => {
 book_title.addEventListener("input", () => {
     if (book_title.value.length < 4) {
         book_title.setCustomValidity("At least 4 characters long")
-        book_title.className = "error"
+        book_title.classList.add("error")
         return
-    } else book_title.setCustomValidity("")
+    } else {
+        book_title.setCustomValidity("")
+        book_title.classList.remove("error")
+    }
+})
+
+book_author.addEventListener("input", () => {
+    if (book_author.value.length < 2) {
+        book_author.setCustomValidity("At least 2 characters")
+        book_author.classList.add("error")
+    } else {
+        book_author.setCustomValidity("")
+        book_author.classList.remove("error")
+    }
+})
+
+book_pages.addEventListener("input", () => {
+    const pages = Number(book_pages.value)
+    if (Number.isNaN(pages)) {
+        book_pages.setCustomValidity("A number is expected")
+        book_pages.classList.add("error")
+    } else if (pages === 0) {
+        book_pages.setCustomValidity("No book has 0 pages bro")
+    }
+    else {
+        book_pages.setCustomValidity("")
+        book_pages.classList.remove("error")
+    }
 })
 
 form.addEventListener("submit", (e) => {
